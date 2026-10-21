@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./App.css";
+import RefreshButton from "./components/RefreshButton";
 function App() {
   const [passLength, setPassLength] = useState(8);
   const [numsAllowed, setNumsAllowed] = useState(false);
@@ -40,8 +41,9 @@ function App() {
           readOnly
           ref={passRef}
         />
+        <RefreshButton onClick={passwordGenerator} />
         <button
-          className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium px-4 transition"
+          className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium px-4 transition cursor-pointer"
           onClick={copyPassword}>
           Copy
         </button>
